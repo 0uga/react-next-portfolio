@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         <Image 
           className={styles.bgimg} 
-          src="/img-mv.jpg" 
+          src="/ogp.png" 
           alt=""
           width={4000}
           height={1200} 
