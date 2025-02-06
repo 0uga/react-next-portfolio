@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         <Image 
           className={styles.bgimg} 
-          src="/ogp.png" 
+          src="/img-hiring.jpg" 
           alt=""
           width={4000}
           height={1200} 
