@@ -1,4 +1,7 @@
 import { getNewsDetail } from "@/app/_libs/microcms";
+import Article from "@/app/_components/Article";
+import ButtonLink from "@/app/_components/ButtonLink";
+import styles from "./page.module.css";
 
 type Props = {
     params: {
@@ -7,8 +10,18 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-    // return <div>{JSON.stringify(props)}</div>
-    const data = await getNewsDetail(params.slug);
-    
-    return <div>{data.title}</div>;
+    try {
+        const data = await getNewsDetail(params.slug);
+        return (
+            <>
+                <Article data={data} />
+                <div className={styles.footer}>
+                    <ButtonLink href="/news">ニュース一覧へ</ButtonLink>
+                </div>
+            </>
+        );
+    } catch (error) {
+        console.error("Error fetching news detail:", error);
+        return <div>エラーが発生しました。詳細を取得できません。</div>;
+    }
 }

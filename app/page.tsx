@@ -30,7 +30,7 @@ const data = await getNewsList({
         </div>
         <Image 
           className={styles.bgimg} 
-          src="/img-mv.jpg" 
+          src="/background2.jpg" 
           alt=""
           width={4000}
           height={1200} 

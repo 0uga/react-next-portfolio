@@ -14,7 +14,7 @@ export type Member = {
 
 export type Category = {
   name: string;
-} & MicroCMSListContent;
+  } & MicroCMSListContent;
 
 export type News = {
   title: string;
@@ -39,10 +39,10 @@ const client = createClient({
 
 export const getMembersList = async (queries?: MicroCMSQueries) => {
   const listData = await client
-  .getList<Member>({
-    endpoint: "members",
-    queries,
-  });
+    .getList<Member>({
+      endpoint: "members",
+      queries,
+    });
   return listData;
 };
 
